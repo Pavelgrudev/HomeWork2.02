@@ -1,5 +1,9 @@
 package HogwartsM;
 
+import javax.print.attribute.standard.MediaSize;
+import java.util.Comparator;
+import java.util.Objects;
+
 public class Gryffindor extends Hogwarts {
         protected String name;
         private String surName;
@@ -9,16 +13,18 @@ public class Gryffindor extends Hogwarts {
         private int honor;
         private int courage;
 
- ;public Gryffindor(String name, String surName, int sorcery, int transgression, int nobility, int honor, int courage){
-         super(name,surName,sorcery,transgression);
-         this.name = name;
-         this.surName = surName;
-         this.sorcery = sorcery;
-         this.transgression = transgression;
-         this.nobility = nobility;
-         this.honor = honor;
-         this.courage = courage;
+        public Gryffindor(String name, String surName, int sorcery, int transgression, int nobility, int honor, int courage) {
+                super(name, surName, sorcery, transgression);
+                this.name = name;
+                this.surName = surName;
+                this.sorcery = sorcery;
+                this.transgression = transgression;
+                this.nobility = nobility;
+                this.honor = honor;
+                this.courage = courage;
         }
+
+
         public String getName() {
                 return name;
         }
@@ -74,4 +80,26 @@ public class Gryffindor extends Hogwarts {
         public void setCourage(int courage) {
                 this.courage = courage;
         }
+
+
+        public String toString() {
+
+                int  jj= getSorcery() + getTransgression() + getCourage() + getHonor() + getNobility();
+                return "Gryffindor{" +
+                        "name='" + name + '\'' +
+                        ", surName='" + surName + '\'' +
+                        ", sorcery=" + sorcery +
+                        ", transgression=" + transgression +
+                        ", nobility=" + nobility +
+                        ", honor=" + honor +
+                        ", courage=" + courage +
+                        '}';
+
+        }
+
+public class compareGriff {
+
+
 }
+}
+
