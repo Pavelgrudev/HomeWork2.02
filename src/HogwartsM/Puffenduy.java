@@ -1,16 +1,17 @@
 package HogwartsM;
 
 public class Puffenduy extends Hogwarts {
-    private  int hardworking;
+    private int hardworking;
     private int loyal;
     private int honest;
 
     public Puffenduy(String name, String surName, int sorcery, int transgression, int hardworking, int loyal, int honest) {
-        super(name,surName,sorcery,transgression);
+        super(name, surName, sorcery, transgression);
         this.hardworking = hardworking;
         this.loyal = loyal;
         this.honest = honest;
     }
+
     public int getHardworking() {
         return hardworking;
     }
@@ -46,5 +47,16 @@ public class Puffenduy extends Hogwarts {
                 ", sorcery=" + getSorcery() +
                 ", transgression=" + getTransgression() +
                 '}';
+    }
+
+    public void comparePuff(Puffenduy other) {
+        int result = (this.getHardworking() + this.getLoyal() + this.getHonest()) - (other.getHardworking() + other.getLoyal() + other.getHonest());
+        if (result > 0) {
+            System.out.println(this.getName() + " лучший Пуффендуец, чем " + other.getName());
+        } else if (result < 0) {
+            System.out.printf(" %s слабее Пуффендуйца %s ", this.getName(), other.getName());
+        } else {
+            System.out.printf(" Сила Пуффендуйцев равна");
+        }
     }
 }

@@ -59,4 +59,22 @@ public class Kogtevran extends Hogwarts{
                 ", transgression=" + getTransgression() +
                 '}';
     }
+    public void compareKogt(Kogtevran other){
+     int result=(this.getSmart()+this.getWise()+this.getWitty()+this.getFullOfCreativity())-
+             (other.getSmart()+other.getWise()+other.getWitty()+other.getFullOfCreativity());
+        if (result > 0) {
+            System.out.println(this.getName() + " лучший Когтевранец, чем " + other.getName());
+        } else if (result < 0) {
+            System.out.printf(" %s слабее Когтевранца %s ", this.getName(), other.getName());
+        } else {
+            System.out.printf(" Сила Когтевранцев равна");
+        }
+
+
+
+
+
+
+
+ }
 }

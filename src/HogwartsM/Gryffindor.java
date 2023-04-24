@@ -1,11 +1,5 @@
 package HogwartsM;
 
-import org.w3c.dom.ls.LSOutput;
-
-import javax.print.attribute.standard.MediaSize;
-import java.util.Comparator;
-import java.util.Objects;
-
 public class Gryffindor extends Hogwarts {
         private int nobility;
         private int honor;
@@ -50,30 +44,16 @@ public class Gryffindor extends Hogwarts {
                         ", surName='" + getSurName() + '\'' +
                         ", sorcery=" + getSorcery() +
                         ", transgression=" + getTransgression() +
-                        '}';
-        }
-
-       // public int Comparator () {
-            //  int total=  this.sorcery+this.transgression+this.nobility+this.honor+this.courage;
-           //     //this.sorcery()+getTransgression()+getNobility()+getHonor()+getCourage();
-        // return getSorcery()+getTransgression()+getNobility()+getHonor()+getCourage();
-
-//}
-public void compareGr(Gryffindor other) {
-int result = this.getNobility() + this.getHonor() + this.getCourage()
-        - other.getNobility() + other.getHonor() + other.getCourage();
-
+                        '}';}
+public void compareGrif(Gryffindor other) {
+int result = (this.getNobility() + this.getHonor() + this.getCourage())
+        - (other.getNobility() + other.getHonor() + other.getCourage());
         if (result > 0) {
                 System.out.println( this.getName() +  " лучший Гриффиндорец, чем " + other.getName());
         } else if(result<0){
-                System.out.printf("%%s слабее Гриффиндорца %%s" , this.getName(), other.getName());}else {
-                System.out.printf(" Сила Гриффиндорцов равна");
+                System.out.printf(" %s слабее Гриффиндорца %s " , this.getName(), other.getName());}else {
+                System.out.printf(" Сила Гриффиндорцов равна");}
         }
-
-        }
-
-
-
 }
 
 

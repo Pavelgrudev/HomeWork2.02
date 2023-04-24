@@ -1,7 +1,7 @@
 package HogwartsM;
 
 public class Slizerin extends Hogwarts {
-     private int cunning;
+        private int cunning;
         private int determination;
         private int ambition;
         private int resourcefulness;
@@ -69,5 +69,17 @@ public class Slizerin extends Hogwarts {
                 ", sorcery=" + getSorcery() +
                 ", transgression=" + getTransgression() +
                 '}';
+    }
+    public void compareSliz(Slizerin other){
+       int  result=(this.getCunning()+this.getDetermination()+this.getAmbition()
+     +this.getResourcefulness()+this.getThirstForPower())- (other.getCunning()+other.getDetermination()+other.getAmbition()
+               +other.getResourcefulness()+other.getThirstForPower());
+        if (result > 0) {
+            System.out.println(this.getName() + " лучший Слизеринец, чем " + other.getName());
+        } else if (result < 0) {
+            System.out.printf(" %s слабее Слизеринца %s ", this.getName(), other.getName());
+        } else {
+            System.out.printf(" Сила Слизеринцев равна");}
+
     }
 }
