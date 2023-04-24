@@ -1,62 +1,21 @@
 package HogwartsM;
 
+import org.w3c.dom.ls.LSOutput;
+
 import javax.print.attribute.standard.MediaSize;
 import java.util.Comparator;
 import java.util.Objects;
 
 public class Gryffindor extends Hogwarts {
-        protected String name;
-        private String surName;
-        private int sorcery;
-        private int transgression;
         private int nobility;
         private int honor;
         private int courage;
-
         public Gryffindor(String name, String surName, int sorcery, int transgression, int nobility, int honor, int courage) {
                 super(name, surName, sorcery, transgression);
-                this.name = name;
-                this.surName = surName;
-                this.sorcery = sorcery;
-                this.transgression = transgression;
                 this.nobility = nobility;
                 this.honor = honor;
                 this.courage = courage;
         }
-
-
-        public String getName() {
-                return name;
-        }
-
-        public void setName(String name)   {
-                this.name = name;
-        }
-
-        public String getSurName() {
-                return surName;
-        }
-
-        public void setSurName(String surName) {
-                this.surName = surName;
-        }
-
-        public int getSorcery() {
-                return sorcery;
-        }
-
-        public void setSorcery(int sorcery) {
-                this.sorcery = sorcery;
-        }
-
-        public int getTransgression() {
-                return transgression;
-        }
-
-        public void setTransgression(int transgression) {
-                this.transgression = transgression;
-        }
-
         public int getNobility() {
                 return nobility;
         }
@@ -81,25 +40,42 @@ public class Gryffindor extends Hogwarts {
                 this.courage = courage;
         }
 
-
+        @Override
         public String toString() {
-
-                int  jj= getSorcery() + getTransgression() + getCourage() + getHonor() + getNobility();
                 return "Gryffindor{" +
-                        "name='" + name + '\'' +
-                        ", surName='" + surName + '\'' +
-                        ", sorcery=" + sorcery +
-                        ", transgression=" + transgression +
-                        ", nobility=" + nobility +
+                        "nobility=" + nobility +
                         ", honor=" + honor +
                         ", courage=" + courage +
+                        ", name='" + getName() + '\'' +
+                        ", surName='" + getSurName() + '\'' +
+                        ", sorcery=" + getSorcery() +
+                        ", transgression=" + getTransgression() +
                         '}';
+        }
+
+       // public int Comparator () {
+            //  int total=  this.sorcery+this.transgression+this.nobility+this.honor+this.courage;
+           //     //this.sorcery()+getTransgression()+getNobility()+getHonor()+getCourage();
+        // return getSorcery()+getTransgression()+getNobility()+getHonor()+getCourage();
+
+//}
+public void compareGr(Gryffindor other) {
+int result = this.getNobility() + this.getHonor() + this.getCourage()
+        - other.getNobility() + other.getHonor() + other.getCourage();
+
+        if (result > 0) {
+                System.out.println( this.getName() +  " лучший Гриффиндорец, чем " + other.getName());
+        } else if(result<0){
+                System.out.printf("%%s слабее Гриффиндорца %%s" , this.getName(), other.getName());}else {
+                System.out.printf(" Сила Гриффиндорцов равна");
+        }
 
         }
 
-public class compareGriff {
 
 
 }
-}
+
+
+
 
